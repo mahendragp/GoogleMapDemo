@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rXh-Rs-uoh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rXh-Rs-uoh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -77,7 +77,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" red="1" green="0.78823529411764703" blue="0.047058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.0" green="0.55294117649999996" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,31 +128,43 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzl-he-vDK">
-                                <rect key="frame" x="249" y="189" width="110" height="40"/>
+                                <rect key="frame" x="229" y="201" width="130" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RbD-bv-Z01"/>
-                                    <constraint firstAttribute="width" constant="110" id="uwH-b5-Mby"/>
+                                    <constraint firstAttribute="width" constant="130" id="uwH-b5-Mby"/>
                                 </constraints>
-                                <state key="normal" title="Get Direction"/>
+                                <state key="normal" title="Get Direction">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="btnDirectionTapped:" destination="Iab-nX-JhO" eventType="touchUpInside" id="NSe-No-thf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type origin and destination to get direction" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgK-Jb-dhb">
+                                <rect key="frame" x="16" y="59.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.55294117649999996" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8wq-Lq-GgP" firstAttribute="top" secondItem="5XQ-uX-fkX" secondAttribute="bottom" constant="25" id="1AZ-Wp-4GI"/>
                             <constraint firstItem="8wq-Lq-GgP" firstAttribute="trailing" secondItem="5XQ-uX-fkX" secondAttribute="trailing" id="3D1-k5-1v2"/>
                             <constraint firstItem="xzl-he-vDK" firstAttribute="trailing" secondItem="8wq-Lq-GgP" secondAttribute="trailing" id="3OT-I0-MbZ"/>
                             <constraint firstItem="5XQ-uX-fkX" firstAttribute="top" secondItem="JrY-AC-I8G" secondAttribute="top" constant="76" id="3jf-Cy-8R9"/>
+                            <constraint firstItem="JrY-AC-I8G" firstAttribute="trailing" secondItem="zgK-Jb-dhb" secondAttribute="trailing" constant="16" id="4OE-te-kVT"/>
                             <constraint firstItem="8wq-Lq-GgP" firstAttribute="leading" secondItem="5XQ-uX-fkX" secondAttribute="leading" id="6zy-DY-V2H"/>
-                            <constraint firstItem="xzl-he-vDK" firstAttribute="top" secondItem="8wq-Lq-GgP" secondAttribute="bottom" constant="8" id="Eg3-Kr-80h"/>
+                            <constraint firstItem="xzl-he-vDK" firstAttribute="top" secondItem="8wq-Lq-GgP" secondAttribute="bottom" constant="20" id="Eg3-Kr-80h"/>
+                            <constraint firstItem="zgK-Jb-dhb" firstAttribute="leading" secondItem="JrY-AC-I8G" secondAttribute="leading" constant="16" id="SpE-bN-IUl"/>
                             <constraint firstItem="5XQ-uX-fkX" firstAttribute="leading" secondItem="JrY-AC-I8G" secondAttribute="leading" constant="16" id="gQc-hn-KER"/>
+                            <constraint firstItem="5XQ-uX-fkX" firstAttribute="top" secondItem="zgK-Jb-dhb" secondAttribute="bottom" constant="16" id="vZ8-3T-kdO"/>
                             <constraint firstItem="JrY-AC-I8G" firstAttribute="trailing" secondItem="5XQ-uX-fkX" secondAttribute="trailing" constant="16" id="wua-EW-h2O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JrY-AC-I8G"/>
                     </view>
                     <connections>
+                        <outlet property="btnDirection" destination="xzl-he-vDK" id="B1W-yY-gBK"/>
                         <outlet property="txtDest" destination="8wq-Lq-GgP" id="Z4z-cM-HlV"/>
                         <outlet property="txtSrc" destination="5XQ-uX-fkX" id="W6m-3I-hal"/>
                     </connections>

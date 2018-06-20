@@ -193,6 +193,8 @@ class ViewController: UIViewController {
                 self.view_mapContainer.camera = GMSCameraPosition(target: location.coordinate, zoom: 13, bearing: 0, viewingAngle: 0)
                 
                 let marker = GMSMarker()
+                marker.icon = UIImage(named: "Image")
+//                marker.icon
                 marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
                 marker.position = location.coordinate
                 marker.title = txt
@@ -201,6 +203,7 @@ class ViewController: UIViewController {
                 
             }
         }
+    
     }
     
     //-----------------------------------------------------

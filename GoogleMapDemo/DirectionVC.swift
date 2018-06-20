@@ -14,12 +14,13 @@ protocol DirectionVCDelegate {
     func routeDidFound(data: GRGoogleRoute?, origin: String?, dest: String?)
 }
 
-class DirectionVC: UIViewController {
+class DirectionVC: UIViewController, UITextFieldDelegate {
 
     
     //MARK:- Outlets
     @IBOutlet weak var txtSrc: UITextField!
     @IBOutlet weak var txtDest: UITextField!
+    @IBOutlet weak var btnDirection: UIButton!
     
     //MARK:- Properties
     var delegate: DirectionVCDelegate?
@@ -66,7 +67,19 @@ class DirectionVC: UIViewController {
     func setupView() {
         
         self.title = ""
+        btnDirection.layer.borderWidth = 1
+        btnDirection.layer.cornerRadius = 8
+        btnDirection.layer.borderColor = UIColor.white.cgColor
         
+        let img = UIImage(named: "back")?.withRenderingMode(.alwaysTemplate)
+        let btn = UIBarButtonItem(image: img, style: .done, target: self, action: #selector(backTapped))
+        self.navigationItem.leftBarButtonItem = btn
+    }
+    
+    //-----------------------------------------------------
+    
+    @objc fileprivate func backTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     //-----------------------------------------------------
@@ -142,4 +155,11 @@ class DirectionVC: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
     }
+   
 }
+
+extension DirectionVC: XMLParserDelegate {
+    
+    
+}
+
